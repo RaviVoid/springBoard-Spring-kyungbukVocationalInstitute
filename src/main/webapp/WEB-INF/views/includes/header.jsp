@@ -25,6 +25,7 @@
 	<script>
 		Breakpoints();
 	</script>
+	<script src="/resources/libs/bower/jquery/dist/jquery.js"></script>
 </head>
 	
 <body class="menubar-left menubar-unfold menubar-light theme-primary">
