@@ -33,7 +33,7 @@ public class BoardController {
 	public void list(Criteria cri, Model model) {
 		log.info(cri);
 		model.addAttribute("list", service.getListWithPaging(cri));
-		model.addAttribute("pageMaker", new PageDTO(service.getListWithCnt(), cri));
+		model.addAttribute("pageMaker", new PageDTO(service.getListWithCnt(cri), cri));
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)

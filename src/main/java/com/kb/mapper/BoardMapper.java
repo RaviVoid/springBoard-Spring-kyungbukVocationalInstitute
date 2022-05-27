@@ -19,6 +19,6 @@ public interface BoardMapper {
 	
 	public int delete(int bno);
 
-	public int getListWithCnt();
+	public int getListWithCnt(Criteria cri);
 
 }
