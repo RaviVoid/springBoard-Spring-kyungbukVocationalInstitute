@@ -17,7 +17,6 @@
 					<h4 style="display:inline;" class="m-b-lg">Board List Page</h4>
 					<a href="register" style="float:right;" class="btn btn-success" role="button">Register New Board</a>
 					<p class="m-b-lg docs">
-						<!-- Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>. -->
 					</p>
 
 					<table class="table table-hover">
@@ -32,29 +31,44 @@
 					</table>
 					
 					
-					<nav style="text-align:right;">
-					  <ul class="pagination">
-					  	<c:if test="${pageMaker.prev}">
-					    <li class="paginate_button">
-					      <a href="?pageNum=${pageMaker.startPage - 1}" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    </c:if>
-					    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="num">
-					    <li class="paginate_button">
-					    	<a href="?pageNum=${num}">${num}</a>
-					    </li>
-					    </c:forEach>
-					    <c:if test="${pageMaker.next}">
-					    <li class="paginate_button">
-					      <a href="?pageNum=${pageMaker.endPage + 1}" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					    </c:if>
-					  </ul>
-					</nav>
+					<div class="container-fluid">
+						<div class="row">
+						  <div class="col-xs-7 pagination">
+							  <form>
+								<select name="type" class="form-control" style="float:left; width:21%; height:32px;">
+									<option value="">전체</option>
+									<option value="title" ${pageMaker.cri.type == "title"?"selected='selected'":""}>제목</option>
+									<option value="content" ${pageMaker.cri.type == "content"?"selected='selected'":""}>내용</option>
+								</select>
+								<input type="text" name="keyword" placeholder="검색어를 입력하세요." value="${pageMaker.cri.keyword}" class="form-control" style="float:left; width:50%; height:32px;">
+								<button class="btn btn-default btn-sm" style="float:left;">검색</button>
+							  </form>
+						  </div>
+						  <div class="col-xs-5" style="text-align:right;">
+							  <ul class="pagination">
+							  	<c:if test="${pageMaker.prev}">
+							    <li class="paginate_button">
+							      <a href="?pageNum=${pageMaker.startPage - 1}" aria-label="Previous">
+							        <span aria-hidden="true">&laquo;</span>
+							      </a>
+							    </li>
+							    </c:if>
+							    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="num">
+							    <li class="paginate_button">
+							    	<a href="?pageNum=${num}">${num}</a>
+							    </li>
+							    </c:forEach>
+							    <c:if test="${pageMaker.next}">
+							    <li class="paginate_button">
+							      <a href="?pageNum=${pageMaker.endPage + 1}" aria-label="Next">
+							        <span aria-hidden="true">&raquo;</span>
+							      </a>
+							    </li>
+							    </c:if>
+							  </ul>
+						  </div>
+						</div>
+					</div>
 					
 				</div><!-- .widget -->
 			</div><!-- END column -->

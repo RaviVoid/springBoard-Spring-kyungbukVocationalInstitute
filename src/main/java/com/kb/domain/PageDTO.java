@@ -14,19 +14,18 @@ public class PageDTO {
 	
 	private int total;//전체 레코드수
 	private Criteria cri;//현재페이지, 한페이지당 보여줄 갯수
+	private final int PAGE_NUM = 5;
 	
 	
 	public PageDTO(int total, Criteria cri) {
 		this.total = total;
 		this.cri = cri;
 		
-		this.endPage = (int)(Math.ceil(cri.getPageNum()/5.0))*5;
+		this.endPage = (int)(Math.ceil(cri.getPageNum()/(PAGE_NUM*1.0)))*PAGE_NUM;
 		
-		this.startPage = this.endPage - 4;
+		this.startPage = this.endPage - (PAGE_NUM-1);
 		
 		int realEnd = (int)(Math.ceil((total * 1.0) / cri.getAmount()));
-//		realEnd = realEnd / 2;
-		
 		
 		if(realEnd < this.endPage) {
 			this.endPage = realEnd;

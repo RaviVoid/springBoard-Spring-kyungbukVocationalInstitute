@@ -29,6 +29,11 @@ public class BoardMapperTests {
 	@Test
 	public void getListWithPaging() {
 		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(20);
+		cri.setType("title");
+		//cri.setType("content");
+		cri.setKeyword("테스트");
 		List<BoardVO> list = mapper.getListWithPaging(cri);
 		list.forEach(board -> log.info(board));
 	}

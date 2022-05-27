@@ -61,10 +61,10 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int getListWithCnt() {
+	public int getListWithCnt(Criteria cri) {
 		log.info("getListWithCnt...................");
 		
-		return mapper.getListWithCnt();
+		return mapper.getListWithCnt(cri);
 	}
 	
 	

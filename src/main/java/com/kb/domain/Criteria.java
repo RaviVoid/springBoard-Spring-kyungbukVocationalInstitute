@@ -7,9 +7,13 @@ public class Criteria {
 
 	private int pageNum;//현재페이지번호
 	private int amount; //한페이지당 보여줄 게시글 수
+	
+	private String type;
+	private String keyword;
+	
 
 	public Criteria() {
-		this(1, 5);
+		this(1, 10);
 	}
 
 	public Criteria(int pageNum, int amount) {
@@ -21,8 +25,6 @@ public class Criteria {
 	 * @return
 	 */
 	public int getPageStart(){
-		
-//		return (getPageNum() - 1) * 5; 
 		return (getPageNum() - 1) * getAmount(); 
 	}
 	
