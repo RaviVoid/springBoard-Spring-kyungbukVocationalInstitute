@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public class PageDTO {
+public class BoardPageDTO {
 
 	private int startPage;//시작페이지
 	private int endPage;//끝페이지
@@ -13,11 +13,11 @@ public class PageDTO {
 	private boolean prev, next; //이전 다음
 	
 	private int total;//전체 레코드수
-	private Criteria cri;//현재페이지, 한페이지당 보여줄 갯수
+	private BoardCriteria cri;//현재페이지, 한페이지당 보여줄 갯수
 	private final int PAGE_NUM = 5;
 	
 	
-	public PageDTO(int total, Criteria cri) {
+	public BoardPageDTO(int total, BoardCriteria cri) {
 		this.total = total;
 		this.cri = cri;
 		

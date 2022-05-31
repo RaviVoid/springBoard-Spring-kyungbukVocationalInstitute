@@ -29,7 +29,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	
 	<select id="getListWithCnt" resultType="int">
 		SELECT count(*) FROM tbl_board
-		WHERE 1=1 
+		WHERE 2<![CDATA[>]]>1 
 		<choose>
 			<when test="type == 'title'">
 			AND title LIKE concat('%',#{keyword},'%')
