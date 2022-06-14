@@ -21,13 +21,16 @@
 
 					<table class="table table-hover">
 						<thead>
-							<tr>
-								<th>#번호</th><th>회원명</th><th>학교명</th><th>학년반</th><th>전화번호</th><th>가입일</th>
-							</tr>
+							<tr><th>#번호</th><th>회원명</th><th>학교명</th><th>학년반</th><th>전화번호</th><th>가입일</th></tr>
 						</thead>
 						<c:forEach items="${list}" var="member">
 						<tr>
-							<td>${member.num}</td><td><a href="get?num=${member.num}">${member.uname}</a></td><td>${member.schoolname}</td><td>${member.gradeclass}</td><td>${member.uid}</td><td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${member.joindate}"/></td>
+							<td>${member.num}</td><td>
+							<a href="get?num=${member.num}">${member.uname}</a></td>
+							<td>${member.schoolname}</td>
+							<td>${member.gradeclass}</td>
+							<td>${member.uid}</td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${member.joindate}"/></td>
 						</tr>
 						</c:forEach>
 					</table>
@@ -39,12 +42,8 @@
 							  <form>
 								<select name="type" class="form-control" style="float:left; width:21%; height:32px;">
 									<option value="">전체</option>
-									<option value="uname" ${pageMaker.cri.type == "uname"?"selected='selected'":""}>회원명</option>
-									<option value="schoolname" ${pageMaker.cri.type == "schoolname"?"selected='selected'":""}>학교명</option>
-									<option value="gradeclass" ${pageMaker.cri.type == "gradeclass"?"selected='selected'":""}>학년-반</option>
-									<option value="uid" ${pageMaker.cri.type == "uid"?"selected='selected'":""}>전화번호</option>
-									<option value="route" ${pageMaker.cri.type == "route"?"selected='selected'":""}>노선</option>
-									<option value="boardingplace" ${pageMaker.cri.type == "boardingplace"?"selected='selected'":""}>탑승장소</option>
+									<option value="uname" ${pageMaker.cri.type == "uname"?"selected='selected'":""}>학생명</option>
+									<option value="uid" ${pageMaker.cri.type == "uid"?"selected='selected'":""}>연락처</option>
 								</select>
 								<input type="text" name="keyword" placeholder="검색어를 입력하세요." value="${pageMaker.cri.keyword}" class="form-control" style="float:left; width:50%; height:32px;">
 								<button class="btn btn-default btn-sm" style="float:left;">검색</button>

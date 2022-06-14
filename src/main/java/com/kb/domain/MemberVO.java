@@ -16,5 +16,4 @@ public class MemberVO {
 	private String boardingplace;
 	private Date joindate;
 	private int coupon;
-	
 }

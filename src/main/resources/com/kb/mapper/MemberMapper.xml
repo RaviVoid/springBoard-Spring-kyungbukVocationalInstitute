@@ -17,20 +17,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 			<when test="type == 'uname'">
 			AND uname LIKE concat('%',#{keyword},'%')
 			</when>
-			<when test="type == 'schoolname'">
-			AND schoolname LIKE concat('%',#{keyword},'%')
-			</when>
-			<when test="type == 'gradeclass'">
-			AND gradeclass LIKE concat('%',#{keyword},'%')
-			</when>
 			<when test="type == 'uid'">
 			AND uid LIKE concat('%',#{keyword},'%')
-			</when>
-			<when test="type == 'route'">
-			AND route LIKE concat('%',#{keyword},'%')
-			</when>
-			<when test="type == 'boardingplace'">
-			AND boardingplace LIKE concat('%',#{keyword},'%')
 			</when>
 		</choose>
 		<![CDATA[
@@ -46,8 +34,8 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 			<when test="type == 'uname'">
 			AND uname LIKE concat('%',#{keyword},'%')
 			</when>
-			<when test="type == 'schoolname'">
-			AND schoolname LIKE concat('%',#{keyword},'%')
+			<when test="type == 'uid'">
+			AND uid LIKE concat('%',#{keyword},'%')
 			</when>
 		</choose>
 	</select>
